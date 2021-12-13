@@ -15,4 +15,6 @@ I wanted to create an app that would make the process a lot simpler and efficien
 * Create an invite to meet with dogs and their owners.
 
 ## Tools
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+* Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+* Bootstrap
+* Unsplash Images
