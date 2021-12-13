@@ -3,8 +3,7 @@ As part of the Le Wagon Bootcamp, we all had to pitch an app idea and to work in
 
 Finding dogs that compliment their dog's personality is a challenge and a pain point for a number dog owners. I wanted to create an app that would make the process a lot simpler and efficient.
 
-Hellodog is a ruby and rails app for dogs to socialise with other dogs. 
-[Click here](https://#) to see it live.
+[Click here](https://hellodog-app.herokuapp.com/) to see it live.
 
 ## Features
 * Create a profile of your dog.
