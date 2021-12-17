@@ -1,0 +1,15 @@
+<h1>Dogs#index</h1>
+<div class="container px-4 py-5">
+  <div class="row">
+    <% @dogs.each do |dog| %>
+    <div class="card mx-3 my-3 zoom" style="width: 18rem;">
+      <%= link_to dog_path(dog) do %>
+      <%= cl_image_tag dog.photo.key %>
+      <% end %>
+      <div class="card-body text-center d-flex flex-column justify-content-between">
+        <h5 class="card-title"><%= dog.name %></h5>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
