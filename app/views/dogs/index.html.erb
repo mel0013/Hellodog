@@ -8,6 +8,18 @@
       <% end %>
       <div class="card-body text-center d-flex flex-column justify-content-between">
         <h5 class="card-title"><%= dog.name %></h5>
+        <p>Age:
+        <% if dog.birth_month.nil? %>
+          <%= 0 %>
+        <% else %>
+          <%= Date.today.month - dog.birth_month %>
+        <% end %>m
+        <% if dog.birth_year.nil? %>
+          <%= 0 %>
+        <% else %>
+          <%= Date.today.year - dog.birth_year %>
+        <% end %>y
+        </p>
       </div>
     </div>
     <% end %>
