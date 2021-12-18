@@ -1,5 +1,5 @@
 <div class="banner-list container py-5">
-  <h1 class="pb-2 border-bottom">Dog Profile</h1>
+  <h1 class="pb-2 border-bottom">Edit Dog Profile</h1>
   <div class="py-4">
     <%= simple_form_for(@dog) do |f| %>
       <%= f.input :name %>
@@ -13,7 +13,7 @@
       <%= f.input :neutered, :collection => %w[Yes No]%>
       <%= f.input :suburb %>
       <%= f.input :photo, as: :file %>
-      <%= f.submit 'Create Profile', class: "btn-green" %>
+      <%= f.submit 'Save', class: "btn-green" %>
     <% end %>
   </div>
 </div>
