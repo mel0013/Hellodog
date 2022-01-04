@@ -40,7 +40,6 @@ dog1 = Dog.create!(
 file1 = URI.open('https://images.unsplash.com/photo-1611468983256-8374e2460484?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1017&q=80')
 dog1.photo.attach(io: file1, filename: 'dog1.png', content_type: 'image/png')
 
-
 dog2 = Dog.create!(
   name: 'Max',
   birth_month: '0',
