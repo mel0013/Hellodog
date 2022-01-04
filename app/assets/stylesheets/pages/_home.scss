@@ -1,1 +1,82 @@
 // Specific CSS for your home-page
+/* Colors and fonts */
+.logo.png {
+  text-align: center;
+}
+
+.card1 {
+  text-align: center;
+}
+body {
+  background: #F7F9FC;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: lighters;
+}
+
+ p {
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+a:hover {
+  color: grey;
+}
+
+.container {
+  width: 500px;   /* This sets the width */
+  margin: 0 auto; /* This automatically sets left/right margins */
+}
+.text-center {
+  text-align: center;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.btn-search {
+  background-color: #044E49;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 4px;
+}
+.btn-search:hover {
+  background-color: #044E49;
+  color: white;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.list-inline li {
+  display: inline;
+  padding: 10px;
+}
+.list-inline i {
+  font-size: 50px;
+  color: rgb(230, 230, 230);
+}
+.list-inline i:hover {
+  color: white;
+}
