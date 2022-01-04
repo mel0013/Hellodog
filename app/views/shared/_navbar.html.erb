@@ -1,19 +1,13 @@
 <div class="bottom-nav">
   <div class="nav-items">
     <% if user_signed_in? %>
-    <i class="far fa-calendar-alt"></i>
-    <i class="fas fa-search"></i>
-    <i class="fas fa-comments"></i>
-    <i class="fas fa-dog"></i>
-      <%= link_to "📅", "#" %>
-      <%= link_to "🔍", "#" %>
-      <%= link_to "💬", "#" %>
-      <%= link_to "🐶", "#" %>
+      <%= link_to icon('fas', 'calendar-alt'), "#", class: "nav-item" %>
+      <%= link_to icon('fas', 'search'),  dogs_path, class: "nav-item" %>
+      <%= link_to icon('fas', 'comments'), "#", class: "nav-item" %>
+      <%= link_to icon('fas', 'dog'), "#", class: "nav-item" %>
+      <%= link_to icon('fas', 'sign-out-alt'), destroy_user_session_path, method: :delete, class: "nav-item" %>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "nav-item" %>
     <% end %>
   </div>
 </div>
-
-
-<%# <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
