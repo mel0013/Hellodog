@@ -1,32 +1,27 @@
 // Specific CSS for your home-page
 /* Colors and fonts */
-.logo.png {
-  text-align: center;
-}
-
-.card1 {
-  text-align: center;
-}
 body {
-  background: #F7F9FC;
-  color: black;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-size: 17px;
-  font-weight: lighters;
 }
 
- p {
+.hero-image {
+  align-items: center;
+  width: 100%;
+  background-image: url("dog_test.jpg");
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+ .hero-text {
+    font-family: 'Roboto', sans-serif;
     display: block;
-    font-size: 17px;
+    font-size: 5px;
     text-align: center;
-    margin-block-start: 1em;
+    margin-block-start: 0em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-}
-
-h1 {
-  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -48,11 +43,6 @@ a:hover {
   text-align: center;
 }
 
-.list-inline > li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
 .btn-search {
   background-color: #044E49;
   color: white;
@@ -60,23 +50,29 @@ a:hover {
   border-radius: 4px;
 }
 .btn-search:hover {
+  background-color: grey;
+  color: white;
+}
+
+.icon-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
   background-color: #044E49;
-  color: white;
+  overflow: auto;
+  flex-wrap: auto;
+
 }
 
-.list-inline {
-  list-style: none;
-  padding-left: 0px;
+.icon-bar a {
+  width: 100%;
+  text-align: center;
+  padding: 7px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 25px;
 }
 
-.list-inline li {
-  display: inline;
-  padding: 10px;
-}
-.list-inline i {
-  font-size: 50px;
-  color: rgb(230, 230, 230);
-}
-.list-inline i:hover {
-  color: white;
+.icon-bar a:hover {
+  background-color: grey;
 }
