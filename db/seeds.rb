@@ -13,13 +13,13 @@ Dog.destroy_all
 puts "database cleared"
 
 puts "creating user account: Melinda"
-melinda = User.create!(first_name: 'Melinda', email: 'mel@hellodog.com', password: 'mypassword')
+melinda = User.create!(first_name: 'Melinda', email: 'mel@hellodog.me', password: 'mypassword')
 
 puts "creating user account: Elana"
-elana = User.create!(first_name: 'Elana', email: 'elana@hellodog.com', password: 'mypassword')
+elana = User.create!(first_name: 'Elana', email: 'elana@hellodog.me', password: 'mypassword')
 
 puts "creating user account: Mardina"
-mardina = User.create!(first_name: 'Mardina', email: 'mardina@hellodog.com', password: 'mypassword')
+mardina = User.create!(first_name: 'Mardina', email: 'mardina@hellodog.me', password: 'mypassword')
 
 
 puts "Creating 3 dog profiles"
