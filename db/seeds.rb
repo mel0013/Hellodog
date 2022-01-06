@@ -13,13 +13,13 @@ Dog.destroy_all
 puts "database cleared"
 
 puts "creating user account: Melinda"
-melinda = User.create!(first_name: 'Melinda', email: 'mel@hellodog.com', password: 'mypassword')
+melinda = User.create!(first_name: 'Melinda', email: 'mel@hellodog.me', password: 'mypassword')
 
 puts "creating user account: Elana"
-elana = User.create!(first_name: 'Elana', email: 'elana@hellodog.com', password: 'mypassword')
+elana = User.create!(first_name: 'Elana', email: 'elana@hellodog.me', password: 'mypassword')
 
 puts "creating user account: Mardina"
-mardina = User.create!(first_name: 'Mardina', email: 'mardina@hellodog.com', password: 'mypassword')
+mardina = User.create!(first_name: 'Mardina', email: 'mardina@hellodog.me', password: 'mypassword')
 
 
 puts "Creating 3 dog profiles"
@@ -39,7 +39,6 @@ dog1 = Dog.create!(
 
 file1 = URI.open('https://images.unsplash.com/photo-1611468983256-8374e2460484?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1017&q=80')
 dog1.photo.attach(io: file1, filename: 'dog1.png', content_type: 'image/png')
-
 
 dog2 = Dog.create!(
   name: 'Max',
