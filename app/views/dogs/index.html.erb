@@ -2,7 +2,7 @@
   <h1 class="pb-2 border-bottom">Dogs</h1>
   <div class="row">
     <% @dogs.each do |dog| %>
-    <div class="card mx-3 my-3 zoom" style="width: 250px;">
+    <div class="card mx-3 my-3 zoom rounded-corners" style="width: 250px;">
       <%= link_to dog_path(dog) do %>
       <%= cl_image_tag dog.photo.key, height: 200, width: 248, crop: :fill %>
       <% end %>
