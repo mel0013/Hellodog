@@ -3,11 +3,14 @@
   <div class="row">
     <% @dogs.each do |dog| %>
     <div class="card mx-3 my-3 zoom rounded-corners" style="width: 250px;">
-      <%= link_to dog_path(dog) do %>
+      <%= link_to dogs_path(dog) do %>
       <%= cl_image_tag dog.photo.key, height: 200, width: 248, crop: :fill %>
       <% end %>
       <div class="card-body text-center">
-        <h4 class="card-title"><strong><%= dog.name %></strong></h4>
+        <h4 class="card-title">
+        <strong><%= dog.name %></strong>
+        <%= link_to icon('fas', 'paw'), toggle_favorite_dog_path(dog), remote: true, method: :post %>
+        </h4>
         <p class="text-muted">from <%= dog.suburb %></p>
         <p><i class="fas fa-walking"></i> <strong><%= dog.user.first_name %></strong></p>
       </div>

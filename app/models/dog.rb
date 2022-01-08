@@ -1,6 +1,7 @@
 class Dog < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
+  acts_as_favoritable
   validates :name, presence: true
   validates :gender, presence: true
   validates :size, presence: true
