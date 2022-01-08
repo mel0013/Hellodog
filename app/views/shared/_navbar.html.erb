@@ -1,7 +1,7 @@
 <div class="bottom-nav">
   <div class="nav-items">
     <% if user_signed_in? %>
-      <%= link_to icon('fas', 'calendar-alt'), "#", class: "nav-item" %>
+      <%= link_to icon('fas', 'calendar-alt'), invitations_path, class: "nav-item" %>
       <%= link_to icon('fas', 'search'),  dogs_path, class: "nav-item" %>
       <%= link_to icon('fas', 'comments'), "#", class: "nav-item" %>
       <%= link_to icon('fas', 'dog'), "#", class: "nav-item" %>
