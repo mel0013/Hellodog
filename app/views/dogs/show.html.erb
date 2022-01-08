@@ -3,7 +3,7 @@
     <div class="card mx-3 my-3" style="width: 250px;">
       <%= cl_image_tag @dog.photo.key, height: 200, width: 248, crop: :fill %>
       <div class="card-body text-center">
-        <h5 class="card-title"><strong><%= @dog.name %></strong></h5>
+        <h5 class="card-title green-header"><strong><%= @dog.name %></strong></h5>
         <p class="text-muted">Lives with <strong><%= @dog.user.first_name %></strong> in <%= @dog.suburb %></p>
         <p>Age:
         <% if @dog.birth_month.nil? %>
@@ -23,8 +23,8 @@
         <p>Energy Level: <%= @dog.energy_level %></p>
         <p>Vaccinated: <%= @dog.vaccinated %></p>
         <p>Neutered: <%= @dog.neutered %></p>
+        <%= link_to "Message #{@dog.user.first_name}", user_chatrooms_path(@dog.user), method: :post, class: "btn-green" %>
       </div>
-      <%= link_to "Message #{@dog.user.first_name}", class: "btn-green" %>
     </div>
   </div>
 </div>

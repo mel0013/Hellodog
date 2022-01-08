@@ -1,0 +1,13 @@
+<div class="container px-4 py-5">
+  <h1 class="pb-2 border-bottom green-header">Messages</h1>
+  <div class="chatroom-card">
+    <% @chatrooms.each do |chatroom| %>
+      <% if current_user == chatroom.user1 %>
+        <p><%= link_to "#{chatroom.user2.first_name}", chatroom_path(chatroom) %></p>
+      <% else %>
+        <p><%= link_to "#{chatroom.user1.first_name}", chatroom_path(chatroom) %></p>
+      <% end %>
+      <p><%= chatroom.messages.last.content %></p>
+    <% end %>
+  </div>
+</div>
