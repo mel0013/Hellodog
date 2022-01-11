@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_01_06_101331) do
+=======
+ActiveRecord::Schema.define(version: 2022_01_08_015556) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +64,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_101331) do
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -68,6 +73,19 @@ ActiveRecord::Schema.define(version: 2022_01_06_101331) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+=======
+  create_table "invitations", force: :cascade do |t|
+    t.string "status", default: "pending"
+    t.string "address"
+    t.datetime "date_time"
+    t.string "details"
+    t.bigint "user1_id"
+    t.bigint "user2_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user1_id"], name: "index_invitations_on_user1_id"
+    t.index ["user2_id"], name: "index_invitations_on_user2_id"
+>>>>>>> master
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,6 +105,11 @@ ActiveRecord::Schema.define(version: 2022_01_06_101331) do
   add_foreign_key "chatrooms", "users", column: "user1_id"
   add_foreign_key "chatrooms", "users", column: "user2_id"
   add_foreign_key "dogs", "users"
+<<<<<<< HEAD
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+=======
+  add_foreign_key "invitations", "users", column: "user1_id"
+  add_foreign_key "invitations", "users", column: "user2_id"
+>>>>>>> master
 end
