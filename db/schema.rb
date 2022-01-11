@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2022_01_06_101331) do
-=======
 ActiveRecord::Schema.define(version: 2022_01_08_015556) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,16 +60,24 @@ ActiveRecord::Schema.define(version: 2022_01_08_015556) do
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
-<<<<<<< HEAD
-  create_table "messages", force: :cascade do |t|
-    t.string "content"
-    t.bigint "chatroom_id", null: false
-    t.bigint "user_id", null: false
+  create_table "favorites", force: :cascade do |t|
+    t.string "favoritable_type", null: false
+    t.bigint "favoritable_id", null: false
+    t.string "favoritor_type", null: false
+    t.bigint "favoritor_id", null: false
+    t.string "scope", default: "favorite", null: false
+    t.boolean "blocked", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-=======
+    t.index ["blocked"], name: "index_favorites_on_blocked"
+    t.index ["favoritable_id", "favoritable_type"], name: "fk_favoritables"
+    t.index ["favoritable_type", "favoritable_id", "favoritor_type", "favoritor_id", "scope"], name: "uniq_favorites__and_favoritables", unique: true
+    t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
+    t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
+    t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
+    t.index ["scope"], name: "index_favorites_on_scope"
+  end
+
   create_table "invitations", force: :cascade do |t|
     t.string "status", default: "pending"
     t.string "address"
@@ -85,7 +89,16 @@ ActiveRecord::Schema.define(version: 2022_01_08_015556) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user1_id"], name: "index_invitations_on_user1_id"
     t.index ["user2_id"], name: "index_invitations_on_user2_id"
->>>>>>> master
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,11 +118,8 @@ ActiveRecord::Schema.define(version: 2022_01_08_015556) do
   add_foreign_key "chatrooms", "users", column: "user1_id"
   add_foreign_key "chatrooms", "users", column: "user2_id"
   add_foreign_key "dogs", "users"
-<<<<<<< HEAD
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
-=======
   add_foreign_key "invitations", "users", column: "user1_id"
   add_foreign_key "invitations", "users", column: "user2_id"
->>>>>>> master
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end
