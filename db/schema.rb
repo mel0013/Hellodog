@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_17_110959) do
+ActiveRecord::Schema.define(version: 2022_01_08_015556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,19 @@ ActiveRecord::Schema.define(version: 2021_12_17_110959) do
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
+  create_table "invitations", force: :cascade do |t|
+    t.string "status", default: "pending"
+    t.string "address"
+    t.datetime "date_time"
+    t.string "details"
+    t.bigint "user1_id"
+    t.bigint "user2_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user1_id"], name: "index_invitations_on_user1_id"
+    t.index ["user2_id"], name: "index_invitations_on_user2_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -68,4 +81,6 @@ ActiveRecord::Schema.define(version: 2021_12_17_110959) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dogs", "users"
+  add_foreign_key "invitations", "users", column: "user1_id"
+  add_foreign_key "invitations", "users", column: "user2_id"
 end
