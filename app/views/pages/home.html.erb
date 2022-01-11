@@ -1,3 +1,35 @@
-<h1>Pages#home</h1>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+  </head>
 
-<p>Find me in app/views/pages/home.html.erb</p>
+  <body>
+    <div id="ImageCarouselCSS" class="carousel slide" data-ride="carousel">
+      <div class="intro">
+        <img class="logo" src="https://res.cloudinary.com/mel0013/image/upload/v1641458490/hellodog/hellodoglogo_s5ehe5.png">
+        <h1>The most effective way for your dog to socialise...</h1>
+        <%= link_to "Meet Our Dogs", dogs_path, class: "btn-green" %>
+      </div>
+      <ol class="carousel-indicators">
+          <li data-target="#ImageCarouselCSS" data-slide-to="0" class="active"></li>
+          <li data-target="#ImageCarouselCSS" data-slide-to="1"></li>
+          <li data-target="#ImageCarouselCSS" data-slide-to="2"></li>
+      </ol>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+      <div class="carousel-item-image" style="
+    background-image: url('https://res.cloudinary.com/mel0013/image/upload/v1639650414/hellodog/homepage_lyb1br.jpg');" class="d-block w-100" alt="Hero Picture"></div>
+      </div>
+      <div class="carousel-item" style="width:100%"><div class="carousel-item-image" style="
+    background-image: url('https://c.stocksy.com/a/5DF800/z9/1965095.jpg');"class="d-block w-100" alt="Dog Meets Friends"></div>
+      </div>
+      <div class="carousel-item"><div class="carousel-item-image" style="
+    background-image: url('https://images.unsplash.com/photo-1601758176559-76c75ead317a?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80');" class="d-block w-100" alt="Happy dogs Happy Owners">
+      </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

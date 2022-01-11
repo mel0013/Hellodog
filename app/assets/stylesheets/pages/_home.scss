@@ -1,1 +1,56 @@
-// Specific CSS for your home-page
+.carousel{
+  height: 100vh;
+}
+.carousel-item active{
+  object-fit: cover;
+}
+
+.carousel-item{
+  height: 100%;
+}
+
+.carousel-indicator {
+  position: absolute;
+}
+
+.carousel-indicators {
+    bottom: 41px;
+}
+
+.carousel-item-image{
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+img.logo{
+  width: 195px;
+}
+
+.intro {
+  position: absolute;
+  top: 10px;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 30%;
+  padding: 20px;
+}
+
+h1 {
+ text-align: center;
+ font-size: 20px;
+ font-weight: bold;
+ color: rgb(92, 92, 92);
+}
