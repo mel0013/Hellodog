@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 2022_01_08_015556) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "user1_id"
+    t.bigint "user2_id"
+    t.index ["user1_id"], name: "index_chatrooms_on_user1_id"
+    t.index ["user2_id"], name: "index_chatrooms_on_user2_id"
+  end
+
   create_table "dogs", force: :cascade do |t|
     t.string "name"
     t.integer "birth_month"
@@ -53,6 +60,24 @@ ActiveRecord::Schema.define(version: 2022_01_08_015556) do
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.string "favoritable_type", null: false
+    t.bigint "favoritable_id", null: false
+    t.string "favoritor_type", null: false
+    t.bigint "favoritor_id", null: false
+    t.string "scope", default: "favorite", null: false
+    t.boolean "blocked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blocked"], name: "index_favorites_on_blocked"
+    t.index ["favoritable_id", "favoritable_type"], name: "fk_favoritables"
+    t.index ["favoritable_type", "favoritable_id", "favoritor_type", "favoritor_id", "scope"], name: "uniq_favorites__and_favoritables", unique: true
+    t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
+    t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
+    t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
+    t.index ["scope"], name: "index_favorites_on_scope"
+  end
+
   create_table "invitations", force: :cascade do |t|
     t.string "status", default: "pending"
     t.string "address"
@@ -64,6 +89,16 @@ ActiveRecord::Schema.define(version: 2022_01_08_015556) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user1_id"], name: "index_invitations_on_user1_id"
     t.index ["user2_id"], name: "index_invitations_on_user2_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,7 +115,11 @@ ActiveRecord::Schema.define(version: 2022_01_08_015556) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "users", column: "user1_id"
+  add_foreign_key "chatrooms", "users", column: "user2_id"
   add_foreign_key "dogs", "users"
   add_foreign_key "invitations", "users", column: "user1_id"
   add_foreign_key "invitations", "users", column: "user2_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end
