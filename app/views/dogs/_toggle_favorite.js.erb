@@ -1,0 +1,8 @@
+var dogId = '<%= @dog.id%>'
+
+function toggleLikeButton(dogId, innerHTML) {
+  let likeButton = document.querySelector(`.like-icon[data-id='${dogId}']`)
+  likeButton.classList.toggle('red');
+}
+
+toggleLikeButton(dogId);

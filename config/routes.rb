@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :invitations, only: [:new, :create]
   end
 
+  resources :dogs, only: :show
   resources :dogs, only: :index do
     member do
       post 'toggle_favorite', to:
