@@ -26,4 +26,15 @@
 
 .btn-lightred:hover {
   background-color: #b44f48;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+// Chat Button
+.chat-link {
+  color: $darkgreen;
+}
+.chat-link:hover {
+  color: #025e57;
+  text-decoration: none;
 }
