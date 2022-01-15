@@ -21,8 +21,11 @@ elana = User.create!(first_name: 'Elana', email: 'elana@hellodog.me', password: 
 puts "creating user account: Mardina"
 mardina = User.create!(first_name: 'Mardina', email: 'mardina@hellodog.me', password: 'mypassword')
 
+puts "creating user account: Ian"
+ian = User.create!(first_name: 'Ian', email: 'ian@hellodog.me', password: 'mypassword')
 
-puts "Creating 3 dog profiles"
+
+puts "Creating dog profiles"
 dog1 = Dog.create!(
   name: 'Mackey',
   birth_month: '1',
@@ -74,4 +77,21 @@ dog3 = Dog.create!(
 file3 = URI.open('https://images.unsplash.com/photo-1589965716319-4a041b58fa8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80')
 dog3.photo.attach(io: file3, filename: 'dog3.png', content_type: 'image/png')
 
-puts "Finished! Created #{dog3.name}, #{dog2.name}, #{dog1.name}"
+dog4 = Dog.create!(
+  name: 'Jasper',
+  birth_month: '5',
+  birth_year: '2017',
+  gender: 'Male',
+  size: 'M (10-20kg)',
+  breed: 'Poodle',
+  energy_level: 'Medium',
+  vaccinated: 'Yes',
+  suburb: 'Richmond',
+  neutered: 'Yes',
+  user_id: ian.id
+)
+
+file4 = URI.open('https://res.cloudinary.com/mel0013/image/upload/v1642215363/hellodog/jasper_wowmj3.jpg')
+dog4.photo.attach(io: file4, filename: 'dog4.png', content_type: 'image/png')
+
+puts "Finished! Created #{dog4.name}, #{dog3.name}, #{dog2.name}, #{dog1.name}"
