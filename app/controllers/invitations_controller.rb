@@ -17,7 +17,7 @@ before_action :authenticate_user!
     @invitation.user1 = current_user
     @invitation.user2 = @user2
     if @invitation.save
-      redirect_to dogs_path
+      redirect_to invitations_path
     else
       render 'invitations/new'
     end
@@ -26,12 +26,17 @@ before_action :authenticate_user!
   def accept
     @invitation = Invitation.find(params[:id])
     @invitation.update(status: "accepted")
+    redirect_to "#{invitations_path}##{@invitation.id}"
   end
 
   def decline
     @invitation = Invitation.find(params[:id])
-    @invitation.update(status: "declined")
+    @invitation.destroy
+    # (status: "declined")
+    redirect_to invitations_path
+    # redirect_to "#{invitations_path}##{@invitation.id}"
   end
+
 
 
   private
