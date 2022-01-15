@@ -1,9 +1,12 @@
+
+
 <div class="container px-4 py-5">
   <h1 class="pb-2 border-bottom">Invitations</h1>
   <div class="row">
     <% @invitations.each do |invitation| %>
-    <div class="card mx-3 my-3 zoom rounded-corners" style="width: 250px;">
+    <div class="card mx-3 my-3 zoom rounded-corners mx-auto" style="width: 250px;">
       <div class="card-body text-center">
+        <%= cl_image_tag invitation.user1.dog.photo.key, height: 200, width: 200, crop: :fill %>
         <h4 class="card-title"><strong><%= invitation.address %></strong></h4>
         <p class="text-muted">from <%= invitation.details %></p>
         <p><i class="fas fa-walking"></i> <strong><%= invitation.user1.first_name %></strong></p>
@@ -11,8 +14,8 @@
         <%= invitation.status %>
         </div>
         <div class="statusHolder">
-        <%= link_to "Accept", accept_invitation_path(invitation), method: :patch  %>
-         <%= link_to "Decline", decline_invitation_path(invitation), method: :patch  %>
+        <%= link_to "Accept", accept_invitation_path(invitation), method: :patch, :class => "btn-green", :onclick => 'alert("Test")' %>
+         <%= link_to "Decline", decline_invitation_path(invitation), method: :patch, :class => "btn-lightred", :onclick => 'location.href=location.href'%>
          </div>
       </div>
     </div>
