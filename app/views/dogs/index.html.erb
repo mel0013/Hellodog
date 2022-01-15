@@ -7,17 +7,16 @@
       <%= cl_image_tag dog.photo.key, height: 200, width: 248, crop: :fill %>
       <% end %>
       <div class="card-body text-center">
-        <h4 class="card-title">
-        <strong><%= dog.name %></strong>
+        <h4 class="card-title"><strong><%= dog.name %></strong>
         <%= link_to toggle_favorite_dog_path(dog), remote: true, method: :post do %>
-      <div class="like-icon mx-2 <%= 'red' if current_user.favorited?(dog) %>" data-id="<%= dog.id %>"> <i class="fas fa-paw"></i>
-      </div>
+        <div class="like-icon mx-2 <%= 'red' if current_user.favorited?(dog) %>" data-id="<%= dog.id %>"> <i class="fas fa-paw"></i></div>
         <% end %>
         </h4>
         <p class="text-muted">from <%= dog.suburb %></p>
         <p><i class="fas fa-walking"></i> <strong><%= dog.user.first_name %></strong></p>
       </div>
     </div>
-    <% end %>
+  <% end %>
+  </div>
   </div>
 </div>
