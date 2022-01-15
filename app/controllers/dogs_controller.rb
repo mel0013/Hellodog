@@ -1,6 +1,7 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  before_action :set_dog, only: [:show, :edit, :update, :destroy ]
   before_action :authenticate_user!, except: [ :show, :index ]
+  respond_to :js
   def index
     @dogs = Dog.all
   end
@@ -37,6 +38,18 @@ class DogsController < ApplicationController
   def destroy
     @dog.destroy
     redirect_to root_path
+  end
+
+  def toggle_favorite
+    @dog = Dog.find_by(id: params[:id])
+    if current_user.favorited?(@dog)
+      current_user.unfavorite(@dog)
+    else
+      current_user.favorite(@dog)
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
