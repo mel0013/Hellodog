@@ -1,15 +1,27 @@
+
+
 <div class="container px-4 py-5">
   <h1 class="pb-2 border-bottom">Invitations</h1>
   <div class="row">
     <% @invitations.each do |invitation| %>
-    <div class="card mx-3 my-3 zoom rounded-corners" style="width: 250px;">
+    <div class="card mx-3 my-3 zoom rounded-corners mx-auto" style="width: 250px; background-color: #FFFFFF;" id="<%= invitation.id %>">
       <div class="card-body text-center">
-        <h4 class="card-title"><strong><%= invitation.address %></strong></h4>
-        <p class="text-muted">from <%= invitation.details %></p>
+        <%= cl_image_tag invitation.user1.dog.photo.key, height: 200, width: 200, crop: :fill %>
+        <h4 class="card-title"><strong><%= invitation.status %></strong></h4>
+        <p class="text-muted"> <%= invitation.address %></p>
+        <p class="text-muted"> <%= invitation.details %></p>
+
         <p><i class="fas fa-walking"></i> <strong><%= invitation.user1.first_name %></strong></p>
-        <%= invitation.status %>
-        <%= link_to "Accept", accept_invitation_path(invitation), method: :patch  %>
-         <%= link_to "Decline", decline_invitation_path(invitation), method: :patch  %>
+        <div class="statusHolder">
+        <% if invitation.status == "accepted"  %>
+            <%= link_to "Decline", decline_invitation_path(invitation), method: :patch, :class => "btn-lightred text-right"  %>
+        <% elsif invitation.status == "declined" %>
+            <%= link_to "Accept", accept_invitation_path(invitation), method: :patch, :class => "btn-green text-right", :id => "" %>
+        <% else %>
+        <%= link_to "Accept", accept_invitation_path(invitation), method: :patch, :class => "btn-green", :id => "" %>
+        <%= link_to "Delete", decline_invitation_path(invitation), method: :delete, :class => "btn-lightred"  %>
+        <% end %>
+         </div>
       </div>
     </div>
     <% end %>
