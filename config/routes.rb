@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :chatrooms, only: :create
     resources :invitations, only: [:new, :create]
   end
-
+  get "dashboard", to: "pages#dashboard", as: "dashboard"
   resources :dogs
 
   resources :chatrooms, only: [:show, :index] do
