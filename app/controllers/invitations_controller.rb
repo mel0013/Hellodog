@@ -26,11 +26,13 @@ before_action :authenticate_user!
   def accept
     @invitation = Invitation.find(params[:id])
     @invitation.update(status: "accepted")
+    redirect_to "#{invitations_path}##{@invitation.id}"
   end
 
   def decline
     @invitation = Invitation.find(params[:id])
     @invitation.update(status: "declined")
+    redirect_to "#{invitations_path}##{@invitation.id}"
   end
 
 
