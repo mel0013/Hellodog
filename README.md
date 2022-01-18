@@ -18,3 +18,5 @@ I wanted to create Hellodog (mobile app) to make the socialising process a lot s
 * Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 * Bootstrap
 * Unsplash Images
+* acts_as_favoritor gem
+* Websocket & Actioncable
