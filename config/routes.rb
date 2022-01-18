@@ -7,8 +7,19 @@ Rails.application.routes.draw do
     resources :chatrooms, only: :create
     resources :invitations, only: [:new, :create]
   end
+<<<<<<< HEAD
   get "dashboard", to: "pages#dashboard", as: "dashboard"
   resources :dogs
+=======
+
+  # resources :dogs, only: :show
+  resources :dogs, only: [:index, :show] do
+    member do
+      post 'toggle_favorite', to:
+    "dogs#toggle_favorite"
+    end
+  end
+>>>>>>> 8a26b85865fb32a9182bd080e6a1201f6dc1631b
 
   resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
