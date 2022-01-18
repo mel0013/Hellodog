@@ -7,10 +7,14 @@
     <div class="card mx-3 my-3 zoom rounded-corners mx-auto" style="width: 250px; background-color: #FFFFFF;" id="<%= invitation.id %>">
       <div class="card-body text-center">
         <%= cl_image_tag invitation.user1.dog.photo.key, height: 200, width: 200, crop: :fill %>
-        <h4 class="card-title light-blue-text my-2"><strong><%= invitation.status.capitalize %></strong></h4>
+        <% if invitation.status == "pending"  %>
+            <h4 class="card-title light-gray-text my-2"><strong><%= invitation.status.capitalize %></strong></h4>
+          <% else invitation.status == "declined" %>
+          <h4 class="card-title light-blue-text my-2"><strong><%= invitation.status.capitalize %></strong></h4>
+        <% end %>
+
         <p class="text-muted"> <%= invitation.address %></p>
         <p class="text-muted"> <%= invitation.details %></p>
-        <p class="text-muted"> <%= invitation.date_time%></p>
 
         <p><i class="fas fa-walking"></i> <strong><%= invitation.user1.first_name %></strong></p>
         <div class="statusHolder">
