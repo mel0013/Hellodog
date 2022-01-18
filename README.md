@@ -3,10 +3,10 @@ As part of the Le Wagon Bootcamp, each student had to pitch an idea and work in 
 
 Finding dogs with complimentary personalities can be a challenge and a pain point for a number of dog owners. Dogs can be picky just like their human counterparts. Getting a dog friend might be a great idea, but it can lead to aggression and injuries, if it's not a good fit. 
 
-I wanted to create Hellodog to make the socialising process a lot simpler and efficient. A community for people to socialise their beloved pets.
+I wanted to create Hellodog (mobile app) to make the socialising process a lot simpler and efficient. A community for people to socialise their beloved pets.
 
 ## Heroku
-[Click here](https://hellodog-app.herokuapp.com/) to see it live.
+[Click here](https://hellodog-app.herokuapp.com/) to see it live. (Mobile version)
 
 ## Features
 * Create a profile of your dog.
