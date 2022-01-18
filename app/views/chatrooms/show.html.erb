@@ -1,19 +1,22 @@
 <div class="container px-4 py-5">
-  <h1 class="pb-2 border-bottom green-header">Chat with <%= @chatroom.user2.first_name %></h1>
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <h1 class="pb-2 border-bottom green-header">
+    Chat with
+    <% if current_user == @chatroom.user1 %>
+      <%= @chatroom.user2.first_name %>
+    <% else %>
+      <%= @chatroom.user1.first_name %>
+    <% end %>
+  </h1>
+   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
-        <i class="author text-muted">
-          <span><%= message.user.first_name%></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
-      </div>
+      <%= render 'messages/message', message: message %>
     <% end %>
   </div>
 
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.user2.first_name}" %>
+    <%= f.input :content, label: false, placeholder: "Enter your message..." %>
     <%= f.submit 'Send', class: "btn-green"  %>
   <% end %>
+    <%= link_to 'Create Invitation', new_user_invitation_path(@chatroom.user2), class: 'btn-green'  %>
+
 </div>
