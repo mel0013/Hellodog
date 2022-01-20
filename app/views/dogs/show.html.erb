@@ -9,7 +9,11 @@
         <% if @dog.birth_month.nil? %>
           <%= 0 %>
         <% else %>
-          <%= Date.today.month - @dog.birth_month %>
+          <% if @dog.birth_month > Date.today.month %>
+            <%= @dog.birth_month - Date.today.month %>
+          <% else %>
+            <%= Date.today.month - @dog.birth_month %>
+          <% end %>
         <% end %>m
         <% if @dog.birth_year.nil? %>
           <%= 0 %>
