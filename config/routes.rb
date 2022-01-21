@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   # resources :dogs, only: :show
-  resources :dogs, only: [:index, :show] do
+  resources :dogs, only: [:index, :new, :create, :edit, :update, :show] do
     member do
       post 'toggle_favorite', to:
     "dogs#toggle_favorite"
