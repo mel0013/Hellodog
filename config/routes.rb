@@ -2,15 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  get 'dashboard', to: 'pages#dashboard'
   resources :users, only: [:show] do
     resources :chatrooms, only: :create
     resources :invitations, only: [:new, :create]
   end
-<<<<<<< HEAD
-  get "dashboard", to: "pages#dashboard", as: "dashboard"
-  resources :dogs
-=======
 
   # resources :dogs, only: :show
   resources :dogs, only: [:index, :show] do
@@ -19,7 +15,6 @@ Rails.application.routes.draw do
     "dogs#toggle_favorite"
     end
   end
->>>>>>> 8a26b85865fb32a9182bd080e6a1201f6dc1631b
 
   resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
@@ -28,5 +23,4 @@ Rails.application.routes.draw do
   resources :invitations, only: [:index]
   patch "invitations/:id/accept", to: "invitations#accept", as: :accept_invitation
   patch "invitations/:id/decline", to: "invitations#decline", as: :decline_invitation
-
 end

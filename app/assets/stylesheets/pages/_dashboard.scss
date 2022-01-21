@@ -3,7 +3,7 @@
   width: -webkit-fill-available;
 }
 
-h1 {
+.welcome {
   position: absolute;
   top: 7%;
   left: 50%;
@@ -21,4 +21,6 @@ h2{
   font-size: 31px;
   text-decoration: underline grey;
   left: 50% ;
+  color: $darkgreen;
+  font-weight: bold;
 }
