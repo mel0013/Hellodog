@@ -29,7 +29,7 @@ class DogsController < ApplicationController
 
   def update
     if @dog.update(dog_params)
-      redirect_to @dog, notice: "Updated..."
+      redirect_to dog_path(@dog), notice: "Updated"
     else
       render :edit
     end
