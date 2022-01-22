@@ -10,7 +10,8 @@ I wanted to create Hellodog (mobile app) to make the socialising process a lot s
 
 ## Features
 * Create a profile of your dog.
-* View and like other dogs.
+* View all the dogs in the community.
+* Add dogs to your favourites list.
 * Send and receive messages from other dog owners.
 * Create an invite to meet with dogs and their owners.
 
