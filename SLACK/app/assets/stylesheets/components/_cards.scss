@@ -1,0 +1,20 @@
+.rounded-corners {
+  border-radius: 8px;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+.green-header {
+  color: $darkgreen;
+  font-weight: bold;
+}
+
+.light-blue-text {
+  color: $lightblue;
+}

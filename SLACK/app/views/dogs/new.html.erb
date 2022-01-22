@@ -1,0 +1,19 @@
+<div class="banner-list container py-5">
+  <h1 class="pb-2 border-bottom green-header">Dog Profile</h1>
+  <div class="py-4">
+    <%= simple_form_for(@dog) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :birth_month %>
+      <%= f.input :birth_year %>
+      <%= f.input :gender, :collection => %w[Male Female] %>
+      <%= f.input :size, :collection => %w[XS\ (1-5kg) S\ (5-10kg) M\ (10-20kg) L\ (20-40kg) XL\ (40kg+)]%>
+      <%= f.input :breed %>
+      <%= f.input :energy_level, :collection => %w[Low Medium High] %>
+      <%= f.input :vaccinated, :collection => %w[Yes No]%>
+      <%= f.input :neutered, :collection => %w[Yes No]%>
+      <%= f.input :suburb %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit 'Create Profile', class: "btn-green" %>
+    <% end %>
+  </div>
+</div>
