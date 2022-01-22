@@ -8,9 +8,13 @@
           <%# USER DOG IMAGE %>
           <div id="dog-image" class="mr-3">
             <% if current_user == chatroom.user1 %>
+            <%= link_to dog_path(chatroom.user2.dog) do %>
               <%= cl_image_tag chatroom.user2.dog.photo.key, height: 80, width: 80, crop: :fill, radius: :max %>
+              <% end %>
             <% else %>
+              <%= link_to dog_path(chatroom.user1.dog) do %>
               <%= cl_image_tag chatroom.user1.dog.photo.key, height: 80, width: 80, crop: :fill, radius: :max %>
+              <% end %>
             <% end %>
           </div>
           <div id="message-content">
