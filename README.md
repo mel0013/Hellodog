@@ -1,5 +1,5 @@
 ## Hellodog
-As part of the Le Wagon Bootcamp, each student had to pitch an idea and work in teams to build it. Only four ideas can be chosen and my pitch was voted in the top 4. I was the Project Lead for Hellodog.
+As part of the Le Wagon Bootcamp, each student had to pitch an idea and work in teams to build it. Only 4 ideas can be chosen our of 14 and my pitch was voted in the top 4. I was the Project Lead for Hellodog.
 
 I wanted to create a product that would help people and animals. The most common pet in Australia are dogs so I thought I'd look into that area.  Finding dogs with complimentary personalities can be a challenge and a pain point for a number of dog owners. Dogs can be picky just like their human counterparts. 
 
