@@ -8,7 +8,7 @@ before_action :authenticate_user!
   end
 
   def index
-    @invitations = Invitation.where(user2: current_user)
+    @invitations = (Invitation.where(user2: current_user) || Invitation.where(status: "accepted")) || (Invitation.where(user1: current_user) || Invitation.where(status: "accepted"))
   end
 
   def create
@@ -42,6 +42,6 @@ before_action :authenticate_user!
   private
 
     def invitation_params
-      params.require(:invitation).permit(:details, :datetime, :address)
+      params.require(:invitation).permit(:details, :date_time, :address)
     end
 end

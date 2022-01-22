@@ -6,11 +6,13 @@
     <% @invitations.each do |invitation| %>
     <div class="card mx-3 my-3 zoom rounded-corners mx-auto" style="width: 250px; background-color: #FFFFFF;" id="<%= invitation.id %>">
       <div class="card-body text-center">
+      <%= link_to dog_path(invitation.user2.dog) do %>
         <%= cl_image_tag invitation.user1.dog.photo.key, height: 200, width: 200, crop: :fill %>
+        <% end %>
         <h4 class="card-title light-blue-text my-2"><strong><%= invitation.status.capitalize %></strong></h4>
         <p class="text-muted"> <%= invitation.address %></p>
         <p class="text-muted"> <%= invitation.details %></p>
-        <p class="text-muted"> <%= invitation.date_time%></p>
+        <p class="text-muted"> <%= invitation.date_time %></p>
 
         <p><i class="fas fa-walking"></i> <strong><%= invitation.user1.first_name %></strong></p>
         <div class="statusHolder">
@@ -20,7 +22,7 @@
             <%= link_to "Accept", accept_invitation_path(invitation), method: :patch, :class => "btn-green text-right", :id => "" %>
         <% else %>
         <%= link_to "Accept", accept_invitation_path(invitation), method: :patch, :class => "btn-green", :id => "" %>
-        <%= link_to "Delete", decline_invitation_path(invitation), method: :delete, :class => "btn-lightred"  %>
+        <%= link_to "Decline", decline_invitation_path(invitation), method: :delete, :class => "btn-lightred"  %>
         <% end %>
          </div>
       </div>
