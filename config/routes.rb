@@ -25,6 +25,6 @@ Rails.application.routes.draw do
 
   resources :invitations, only: [:index]
   patch "invitations/:id/accept", to: "invitations#accept", as: :accept_invitation
-  patch "invitations/:id/decline", to: "invitations#decline", as: :decline_invitation
+  delete "invitations/:id/decline", to: "invitations#decline", as: :decline_invitation
 
 end
