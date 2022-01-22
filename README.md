@@ -21,3 +21,4 @@ Hellodog (mobile app) was created to make the selection process a lot simpler an
 * Unsplash Images
 * acts_as_favoritor gem
 * Websocket & Actioncable
+* Redis (Heroku)
