@@ -3,7 +3,7 @@ As part of the Le Wagon Bootcamp, each student had to pitch an idea and work in 
 
 I wanted to create a product that would help people and animals. The most common pet in Australia are dogs so I thought I'd look into that area.  Finding dogs with complimentary personalities can be a challenge and a pain point for a number of dog owners. Dogs can be picky just like their human counterparts. 
 
-I wanted to create Hellodog (mobile app) to make the selection process a lot simpler and efficient. Hellodog serves as a community and platform for people to socialise their beloved pets. 
+Hellodog (mobile app) was created to make the selection process a lot simpler and efficient. It serves as a community and platform for people to chat with other owners and socialise their beloved pets. 
 
 ## Heroku
 [Click here](https://hellodog-app.herokuapp.com/) to see it live. (Mobile version)
