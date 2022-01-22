@@ -1,9 +1,9 @@
 ## Hellodog
-As part of the Le Wagon Bootcamp, each student had to pitch an idea and work in teams to build it. I wanted to create something that would help people and animals. The most common pet in Australia are dogs so I thought I'd look into that area.
+As part of the Le Wagon Bootcamp, each student had to pitch an idea and work in teams to build it. Only four ideas can be chosen and my pitch was voted in the top 4. I was the Project Lead for Hellodog.
 
-Finding dogs with complimentary personalities can be a challenge and a pain point for a number of dog owners. Dogs can be picky just like their human counterparts. Getting a dog friend might be a great idea, but it can lead to aggression and injuries, if it's not a good fit. 
+I wanted to create a product that would help people and animals. The most common pet in Australia are dogs so I thought I'd look into that area.  Finding dogs with complimentary personalities can be a challenge and a pain point for a number of dog owners. Dogs can be picky just like their human counterparts. 
 
-I wanted to create Hellodog (mobile app) to make the socialising process a lot simpler and efficient. A community for people to socialise their beloved pets.
+I wanted to create Hellodog (mobile app) to make the selection process a lot simpler and efficient. Hellodog serves as a community and platform for people to socialise their beloved pets. 
 
 ## Heroku
 [Click here](https://hellodog-app.herokuapp.com/) to see it live. (Mobile version)
