@@ -16,7 +16,7 @@ Hellodog (mobile app) was created to make the selection process a lot simpler an
 * Create an invite to meet with dogs and their owners.
 
 ## Tools
-* Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+* Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates)
 * Bootstrap
 * Unsplash Images
 * acts_as_favoritor gem
