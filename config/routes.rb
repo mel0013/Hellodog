@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  get 'dashboard', to: 'pages#dashboard'
   resources :users, only: [:show] do
     resources :chatrooms, only: :create
     resources :invitations, only: [:new, :create]
@@ -26,5 +26,4 @@ Rails.application.routes.draw do
   resources :invitations, only: [:index]
   patch "invitations/:id/accept", to: "invitations#accept", as: :accept_invitation
   delete "invitations/:id/decline", to: "invitations#decline", as: :decline_invitation
-
 end

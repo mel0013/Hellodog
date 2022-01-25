@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
+    @dog_profile = @user.dog
 
     @dogs = []
     @favorites = current_user.all_favorites
@@ -25,5 +27,4 @@ class PagesController < ApplicationController
       format.js
     end
   end
-
 end

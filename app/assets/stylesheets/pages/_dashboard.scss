@@ -1,0 +1,27 @@
+.banner-image {
+  height: 220px;
+  width: -webkit-fill-available;
+}
+
+.welcome {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 39px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+h2{
+  padding-top: 5%;
+  color: #044E49;
+  font-size: 31px;
+  left: 50% ;
+  color: $darkgreen;
+  font-weight: bold;
+  font-weight: 900;
+  padding-left: 6%;
+  font-size: 21px;
+}
