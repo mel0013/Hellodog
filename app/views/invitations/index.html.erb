@@ -20,6 +20,7 @@
 
         <p><i class="fas fa-walking"></i> <strong><%= invitation.user1.first_name %></strong></p>
         <p><i class="fas fa-paw"></i> <strong><%= invitation.user1.dog.name%></strong></p>
+
         <div class="statusHolder">
         <% if invitation.status == "accepted"  %>
             <%= link_to "Decline", decline_invitation_path(invitation), method: :delete, :class => "btn-lightred text-right"  %>

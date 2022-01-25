@@ -4,7 +4,7 @@
       <%= link_to icon('fas', 'calendar-alt'), invitations_path, class: "nav-item" %>
       <%= link_to icon('fas', 'search'),  dogs_path, class: "nav-item" %>
       <%= link_to icon('fas', 'comments'), chatrooms_path, class: "nav-item" %>
-      <%= link_to icon('fas', 'dog'), dashboard_path, class: "nav-item" %>
+      <%= link_to icon('fas', 'paw'), dashboard_path, class: "nav-item" %>
       <%= link_to icon('fas', 'sign-out-alt'), destroy_user_session_path, method: :delete, class: "nav-item" %>
     <% else %>
       <%= link_to "Log in", new_user_session_path, class: "nav-item" %>
