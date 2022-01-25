@@ -1,28 +1,44 @@
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-  </head>
-
-  <body>
    <div id="banner-image" class="banner">
     <div class="dash-intro">
       <img class="banner-image" src="https://res.cloudinary.com/mel0013/image/upload/v1639650256/hellodog/banner_dashboard_wrp6p3.jpg">
-      <h1 class="welcome" >HELLO <%= @dog.name %>!</h1>
+      <h1 class="welcome" >HELLO <%= @dog_profile.name %>!</h1>
       </div>
+      <div class="container px-4 pt-5">
+        <h1 class="pb-2 border-bottom green-header text-center">Profile </h1>
+        <%= link_to dog_path(@dog_profile) do %>
+          <div class="card mx-3 my-3 zoom rounded-corners mx-auto">
+            <div class="card-body text-center">
+              <%= cl_image_tag @dog_profile.photo.key, height: 200, width: 248, crop: :fill %>
+            </div>
+            <div class="container text-center" style="height: 128px">
+              <h4 class="card-title green-header"><%= @dog_profile.name %></h4>
+              <p class="text-muted">from: <%= @dog_profile.suburb %></p>
+              <%= link_to "Update", edit_dog_path(@dog_profile), class: "btn-green" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+   </div>
 
-      <h2 class="pb-2 border-bottomj green-header">Profile </h1></h2>
-      <div class="card mx-3 my-3 zoom rounded-corners mx-auto" style="width: 400px;">
+<div class="container px-4 py-5">
+  <h1 class="pb-2 border-bottom green-header">Favourites</h1>
+  <div class="row">
+    <% @dogs.each do |dog| %>
+    <%= link_to dog_path(dog) do %>
+    <div class="card mx-3 my-3 zoom rounded-corners mx-auto" style="width: 250px;">
       <div class="card-body text-center">
-        <%= cl_image_tag @dog.photo.key, height: 200, width: 248, crop: :fill %>
-      </div>
-      <div class="container" style="height: 128px">
-        <h3><%= @dog.name %></h3>
-        <p>From: <%= @dog.suburb %></p>
-        <%= link_to "Update", edit_dog_path(@dog), class: "btn-green" %>
+      <%= cl_image_tag dog.photo.key, height: 200, width: 200, crop: :fill %>
+      <% end %>
+        <h4 class="card-title green-header my-2"><strong><%= dog.name %></strong>
+        <%= link_to toggle_favorite_dog_path(dog), remote: true, method: :post do %>
+        <div class="like-icon mx-2 light-blue-text <%= 'red' if current_user && current_user.favorited?(dog) %>" data-id="<%= dog.id %>"> <i class="fas fa-paw"></i></div>
+        <% end %>
+        </h4>
+        <p class="text-muted">from <%= dog.suburb %></p>
+        <p class="light-blue-text"><i class="fas fa-walking"></i> <strong><%= dog.user.first_name %></strong></p>
       </div>
     </div>
-   </div>
-  </body>
-</html>
+  <% end %>
+  </div>
+  </div>
+</div>
