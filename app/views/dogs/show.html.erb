@@ -28,7 +28,6 @@
         <p>Vaccinated: <%= @dog.vaccinated %></p>
         <p>Neutered: <%= @dog.neutered %></p>
         <%= link_to "Message #{@dog.user.first_name}", user_chatrooms_path(@dog.user), method: :post, class: "btn-green" %>
-        <%= link_to 'Create Invitation', new_user_invitation_path(@dog.user), class: 'btn-green'  %>
       </div>
     </div>
   </div>
