@@ -8,7 +8,14 @@ before_action :authenticate_user!
   end
 
   def index
-    @invitations = Invitation.where(user2: current_user)
+    if (Invitation.where(status: "pending"))
+      @invitations = Invitation.where(user2: current_user)
+
+      # @invitations = Invitation.where(status: "pending")
+    else
+      @invitations = Invitation.where(user2: current_user) && Invitation.where(status: "accepted")
+    end
+    # @invitations = Invitation.where(user2: current_user) || Invitation.where(status: "accepted")
   end
 
   def create
@@ -32,9 +39,7 @@ before_action :authenticate_user!
   def decline
     @invitation = Invitation.find(params[:id])
     @invitation.destroy
-    # (status: "declined")
     redirect_to invitations_path
-    # redirect_to "#{invitations_path}##{@invitation.id}"
   end
 
 
@@ -42,6 +47,6 @@ before_action :authenticate_user!
   private
 
     def invitation_params
-      params.require(:invitation).permit(:details, :datetime, :address)
+      params.require(:invitation).permit(:details, :date_time, :address)
     end
 end
