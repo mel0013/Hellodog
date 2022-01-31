@@ -1,19 +1,22 @@
    <div id="banner-image" class="banner">
     <div class="dash-intro">
       <img class="banner-image" src="https://res.cloudinary.com/mel0013/image/upload/v1639650256/hellodog/banner_dashboard_wrp6p3.jpg">
-      <h1 class="welcome" >HELLO <%= @dog_profile.name %>!</h1>
+      <h1 class="welcome" >Hello <%= current_user.first_name %>!</h1>
       </div>
       <div class="container px-4 pt-5">
-        <h1 class="pb-2 border-bottom green-header text-center">Profile </h1>
+        <h1 class="pb-2 border-bottom green-header text-center">Profile</h1>
         <%= link_to dog_path(@dog_profile) do %>
-          <div class="card mx-3 my-3 zoom rounded-corners mx-auto">
-            <div class="card-body text-center">
-              <%= cl_image_tag @dog_profile.photo.key, height: 200, width: 248, crop: :fill %>
-            </div>
-            <div class="container text-center" style="height: 128px">
-              <h4 class="card-title green-header"><%= @dog_profile.name %></h4>
-              <p class="text-muted">from: <%= @dog_profile.suburb %></p>
-              <%= link_to "Update", edit_dog_path(@dog_profile), class: "btn-green" %>
+          <div class="card mx-3 my-3 zoom rounded-corners mx-auto" style="width: 300px;">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-start">
+                <div id="dog-image" class="mr-3">
+                  <%= cl_image_tag @dog_profile.photo.key, height: 150, width: 150, crop: :fill, radius: :max%>
+                </div>
+                <div class="message-content">
+                  <h4 class="card-title green-header mb-4"><%= @dog_profile.name %></h4>
+                  <%= link_to "Update", edit_dog_path(@dog_profile), class: "btn-green" %>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>

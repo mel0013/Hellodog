@@ -1,27 +1,23 @@
 .banner-image {
-  height: 220px;
-  width: -webkit-fill-available;
+  // height: 220px;
+  height: 10%;
+  // width: -webkit-fill-available;
+  width: 100%;
+  background-size: cover;
 }
 
 .welcome {
   position: absolute;
-  top: 7%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 39px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-size: 40px;
 }
 
-h2{
-  padding-top: 5%;
-  color: #044E49;
-  font-size: 31px;
-  left: 50% ;
-  color: $darkgreen;
-  font-weight: bold;
-  font-weight: 900;
-  padding-left: 6%;
-  font-size: 21px;
+// Media Query
+@media (max-width: 768px) {
+   .banner-image {
+     height: 5%;
+   }
 }
